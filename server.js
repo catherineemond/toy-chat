@@ -1,4 +1,5 @@
 var app = require("express")();
+var cors = require("cors");
 var http = require("http").createServer(app);
 var io = require("socket.io")(http);
 
@@ -21,6 +22,8 @@ function selectName() {
   names.splice(index, 1);
   return name;
 }
+
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
