@@ -35,6 +35,6 @@ io.on("connection", (socket) => {
   });
 });
 
-http.listen("https://ruby-tuesday-toy-chat.herokuapp.com/", () => {
+http.listen(3000, () => {
   console.log("listening on *:3000");
 });
