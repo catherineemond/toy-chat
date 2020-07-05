@@ -2,6 +2,7 @@ var app = require("express")();
 var cors = require("cors");
 var http = require("http").createServer(app);
 var io = require("socket.io")(http);
+var port = process.env.PORT || 3000;
 
 var names = [
   "octopus",
@@ -38,6 +39,6 @@ io.on("connection", (socket) => {
   });
 });
 
-http.listen(80, "https://ruby-tuesday-toy-chat.herokuapp.com", () => {
-  console.log("listening on *:3000");
+http.listen(port, () => {
+  console.log("server started");
 });
